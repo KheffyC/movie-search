@@ -1,0 +1,113 @@
+*{
+    margin: 5px;
+    padding: 1px;
+}
+body{
+    background-color: #303F9F;
+    background-image: url(../public/images/searchBackground.jpg);
+
+}
+
+/* Header Footer  */
+
+.HeaderFooterColorBar{
+    height: 4px;
+    background-color: rgb(141, 39, 39);
+}
+
+.Logo{
+    color: #fff;
+}
+
+.Copyright{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Search Container */
+
+.Home-Container{
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Home-Hero-Container{
+    font-size: 30px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.input-field{
+    padding: 10px;
+}
+
+.search-field{
+    height: 40px;
+    width: 300px;
+    font-size:x-large;
+}
+.btn{
+    height: 30px;
+    width: 70px;
+}
+
+/* Movie List Display */
+
+.MovieListItem{
+    display: flex; 
+    justify-content: space-around;
+    width: 60vw;
+    border-style: groove;
+    background-color: #3F51B5 ;
+    color: #fff;
+}
+
+.Movie-Card-Container{
+    position: relative;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 35px;
+    font-family: block;
+}
+
+.poster-image{
+    box-shadow: 3px 3px 3px #000;
+    padding: auto;
+}
+
+.MovieCardContent{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.movieTags{
+    position: relative;
+	margin: 0 10px;
+	padding: 0;
+}
+
+.movieTags li{
+    position: relative;
+	list-style: none;
+	display: inline-block;
+	background-color: #ccc;
+	margin: 0;
+	padding: 3px 7px;
+	border-radius: 5px;
+    box-shadow: 3px 5px 5px #000;
+    color: #000;
+}
+
