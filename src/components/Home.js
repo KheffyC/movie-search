@@ -23,10 +23,10 @@ const revealMovieCard = () => {
         }
         getMovieByName(search)
     }
-    
     clickSearch();
-    const showMovieCard = (e) => {
-        setShow(!undefined)
+    
+    const showMovieCard = () => {
+        setShow(true)
     };
     showMovieCard();
 };
@@ -46,7 +46,8 @@ const revealMovieCard = () => {
                 <button className='btn' onClick={revealMovieCard}>Search</button>
             </div>
         </div>
-        { show && (<div className='MovieListItem'>
+        {
+           show && (<div className='MovieListItem'>
             <MovieCard 
                 title={movies.Title}
                 movieSearch = {search}
@@ -61,7 +62,8 @@ const revealMovieCard = () => {
                 runtime={movies.Runtime}
             />
 
-        </div>)}
+        </div>)
+        }
 
 
     </div>

@@ -8,12 +8,12 @@ const MovieCard = (props) => {
          <img src={props.poster} alt={props.title}/>
         </div>
         <div className="content">
-            <div className="Card-header">{props.title}</div>
-            <div className="label">{props.type}</div>
+            <div className="Card-header" style={{fontFamily: 'Typo Square Bold Demo',fontWeight: 500, color: 'black'}}>{props.title}</div>
+            <div className="label" style={{color: 'gray'}}>{props.type}</div>
         </div>
         <hr />
-        <div className="extra-content">
-            Now Playing
+        <div className="extra-content" style={{fontSize: '20px'}}>
+            NOW PLAYING
         </div>
     </div>
   )

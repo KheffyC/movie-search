@@ -1,14 +1,13 @@
-import PropTypes from "prop-types"
 
 const MovieDetails = (props) => {
 
   return (
     <div className="MovieCardContent">
       <div className="label"> { props.imdbRating } </div>
-      <div className="plot">
+      <div className="plot" style={{color: 'black', fontWeight: '500', fontSize: '27px'}}>
         <span>{ props.plot }</span>
       </div>
-      <div className="label">
+      <div className="label" style={{fontFamily: 'gotham Bold', color: 'black', fontSize: '32px', fontWeight: '400'}}>
         { props.rated }
       </div>
       <ul className="movieTags">
