@@ -20,18 +20,17 @@ const revealMovieCard = () => {
             let res = await fetch(url)
             const data = await res.json();
             setMovies(data)
-            console.log(data)
         }
         getMovieByName(search)
     }
-
+    
+    clickSearch();
     const showMovieCard = (e) => {
         setShow(!undefined)
-    }
-
-    clickSearch();
+    };
     showMovieCard();
-}
+};
+
 
   return (
     <div className='Home-Container'>
@@ -43,7 +42,6 @@ const revealMovieCard = () => {
                     type='text' 
                     placeholder={'Movie Name'} 
                     onChange={(e) => setSearch(e.target.value)}
-                    onKeyPress={(e) => handler(e)}
                 />
                 <button className='btn' onClick={revealMovieCard}>Search</button>
             </div>
@@ -69,5 +67,7 @@ const revealMovieCard = () => {
     </div>
   )
 }
+
+
 
 export default Home
