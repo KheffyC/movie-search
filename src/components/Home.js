@@ -4,8 +4,13 @@ import MovieDetails from './MovieDetails'
 import { useState } from 'react'
 
 const Home = () => {
-    const [search, setSearch] = useState('Toy Story')
+    const [show, setShow] = useState(false)
+    const [search, setSearch] = useState('')
     const [movies, setMovies] = useState('')
+
+  
+
+const revealMovieCard = () => {
 
     const clickSearch = () => {
         const API_KEY = "af8f347a";
@@ -20,6 +25,14 @@ const Home = () => {
         getMovieByName(search)
     }
 
+    const showMovieCard = (e) => {
+        setShow(!undefined)
+    }
+
+    clickSearch();
+    showMovieCard();
+}
+
   return (
     <div className='Home-Container'>
         <div className='Home-Hero-Container'>
@@ -30,11 +43,12 @@ const Home = () => {
                     type='text' 
                     placeholder={'Movie Name'} 
                     onChange={(e) => setSearch(e.target.value)}
+                    onKeyPress={(e) => handler(e)}
                 />
-                <button className='btn' onClick={clickSearch}>Search</button>
+                <button className='btn' onClick={revealMovieCard}>Search</button>
             </div>
         </div>
-        <div className='MovieListItem'>
+        { show && (<div className='MovieListItem'>
             <MovieCard 
                 title={movies.Title}
                 movieSearch = {search}
@@ -49,7 +63,7 @@ const Home = () => {
                 runtime={movies.Runtime}
             />
 
-        </div>
+        </div>)}
 
 
     </div>
