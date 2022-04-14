@@ -1,66 +1,73 @@
 import React from 'react'
 import MovieCard from './MovieCard'
-import MovieDetails from './MovieDetails'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import MovieList from './MovieList'
 
 const Home = () => {
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(true)
     const [search, setSearch] = useState('')
     const [movies, setMovies] = useState('')
 
+
+  //create use effect
+  //move async function and show inside useEffect
+  //add dependency array - state or function to run again (movies? potentially)
   
 
-const revealMovieCard = () => {
+  useEffect(() => {
 
-    const clickSearch = () => {
-        const API_KEY = "af8f347a";
-
-        async function getMovieByName(name) {
-            const url = `http://www.omdbapi.com/?apikey=${API_KEY}&t=${name}`;
-            let res = await fetch(url)
-            const data = await res.json();
-            setMovies(data)
-        }
-        getMovieByName(search)
+    const API_KEY = "af8f347a";
+    async function movieData(search) {
+        const url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`;
+        let res = await fetch(url)
+        const data = await res.json();
+        setMovies(data)
     }
-    clickSearch();
-    
-    const showMovieCard = () => {
-        setShow(true)
-    };
-    showMovieCard();
-};
+    movieData(search)
+    console.log(movieData(search))
+
+    if (movies){
+        setShow(true);
+    } else {
+        console.log("Sorry! The search results are undefined")
+        setShow(false);
+    }
+
+
+  }, [search])
+
 
 
   return (
-    <div className='Home-Container'>
+    <div className='Home-Container'>      
         <div className='Home-Hero-Container'>
             Enter your Movie Name here!
             <div className='input-field'>
                 <input 
                     className="search-field" 
                     type='text' 
-                    placeholder={'Movie Name'} 
+                    value = {search}
+                    placeholder={'Movie Name, Keyword, Series ...'} 
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <button className='btn' onClick={revealMovieCard}>Search</button>
             </div>
         </div>
         {
+           
            show && (<div className='MovieListItem'>
-            <MovieCard 
-                title={movies.Title}
-                movieSearch = {search}
-                poster={movies.Poster}
-                type={movies.Type}
-            />
-            <MovieDetails 
-                imdbRating={movies.ImdbRating}
-                plot={movies.Plot}
-                rated={movies.Rated}
-                genre= {movies.Genre}
-                runtime={movies.Runtime}
-            />
+               {movies.Search?.map((movie, i) => (
+                   <div key={i}>
+                       {console.log(movie)}
+                       <div className='individualMovieCard'>
+                           <MovieCard 
+                                movieData = {movie}
+                            />
+                       </div>
+                   </div>
+               ))}
+            {/* <MovieList 
+                movieData = {movies}
+            /> */}
 
         </div>)
         }
