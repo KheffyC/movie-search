@@ -3,16 +3,16 @@ const MovieDetails = (props) => {
 
   return (
     <div className="MovieCardContent">
-      <div className="label"> { props.imdbRating } </div>
+      <div className="label"> { props.movie.imdbRating } </div>
       <div className="plot" style={{color: 'black', fontWeight: '500', fontSize: '27px'}}>
-        <span>{ props.plot }</span>
+        <span>{ props.movie.Plot }</span>
       </div>
       <div className="label" style={{fontFamily: 'gotham Bold', color: 'black', fontSize: '32px', fontWeight: '400'}}>
-        { props.rated }
+        { props.movie.Rated }
       </div>
       <ul className="movieTags">
-        <li className="tagLabel">{ props.genre }</li>
-        <li className="tagLabel">{ props.runtime }</li>
+        <li className="tagLabel">{ props.movie.Genre }</li>
+        <li className="tagLabel">{ props.movie.Runtime }</li>
       </ul>
     </div>
   )

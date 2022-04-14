@@ -51,8 +51,8 @@ body{
 
 .search-field{
     height: 40px;
-    width: 300px;
-    font-size:x-large;
+    width: 365px;
+    font-size:large;
 }
 .btn{
     height: 30px;
@@ -63,36 +63,73 @@ body{
 
 .MovieListItem{
     display: flex; 
-    justify-content: space-around;
-    width: 60vw;
+    /* justify-content:flex-start; */
+    flex-wrap: wrap;
+    width: auto;
     border-style: groove;
     background-color: #3F51B5 ;
     color: #fff;
 }
 
 .Movie-Card-Container{
-    position: relative;
     height: auto;
     width: auto;
     display: flex;
-    flex-direction: column;
-    align-items: left;
-    font-size: 35px;
+    align-items: center;
+    font-size: 20px;
     font-family: block;
+    border: solid #000 3px ;
+}
+
+.Movie-Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid
 }
 
 .poster-image{
+    height: auto;
+    width: 145px;
     box-shadow: 3px 3px 3px #000;
     padding: auto;
 }
 
+img{
+    position: relative;
+    height: 200px
+}
+
 .MovieCardContent{
     display: flex;
-    flex-direction: column;
-    align-items: left;
+    flex-direction: row;
+    align-items: center;
     font-size: x-large;
     font-weight: 400;
 }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+
+
+
+.individualMovieCard {
+    height: auto;
+}
+
+.Card-header{
+    font-family: 'Typo Square Bold Demo';
+    font-weight: 500;
+    color: 'black'
+
+}
+
+/*  Movie Details */
 
 .movieTags{
     position: relative;
