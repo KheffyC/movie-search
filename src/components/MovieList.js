@@ -1,18 +1,19 @@
 import MovieCard from "./MovieCard"
 
 const MovieList = (props) => {
-    const list = props.movieData.Search;
-    console.log(list);
-
-    <div>Hello
-            <MovieCard             
-                movie = {list}
-            />
-             {/* {list?.map((movie, i) => (
-                   <div key={i}>Hello</div>
-               ))} */}
+    console.log(props)
+  return(
+    <div className="MovieListItem">
+        
+        {props.movieData.Search?.map((movie, i) => (
+            <div key={i}>
+                <MovieCard 
+                    movieData = {movie}                       
+                />
+            </div>
+        ))}
            
-    </div>
+    </div>)
 }
 
 export default MovieList

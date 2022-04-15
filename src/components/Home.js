@@ -1,10 +1,9 @@
 import React from 'react'
-import MovieCard from './MovieCard'
 import { useState, useEffect } from 'react'
 import MovieList from './MovieList'
 
 const Home = () => {
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState('')
     const [search, setSearch] = useState('')
     const [movies, setMovies] = useState('')
 
@@ -24,7 +23,6 @@ const Home = () => {
         setMovies(data)
     }
     movieData(search)
-    console.log(movieData(search))
 
     if (movies){
         setShow(true);
@@ -52,24 +50,10 @@ const Home = () => {
                 />
             </div>
         </div>
-        {
-           
-           show && (<div className='MovieListItem'>
-               {movies.Search?.map((movie, i) => (
-                   <div key={i}>
-                       {console.log(movie)}
-                       <div className='individualMovieCard'>
-                           <MovieCard 
-                                movieData = {movie}
-                            />
-                       </div>
-                   </div>
-               ))}
-            {/* <MovieList 
-                movieData = {movies}
-            /> */}
-
-        </div>)
+        {  
+            show &&  <MovieList
+                        movieData = {movies}                
+                    />
         }
 
 
