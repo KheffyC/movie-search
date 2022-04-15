@@ -20,11 +20,6 @@ const MovieCard = (props) => {
                 NOW PLAYING
             </div>
         </div>
-        {/* <div className="Detail-Card">
-            <MovieDetails 
-                movie = {props.movieData}
-            /> 
-        </div> */}
     </div>
   )
 }
