@@ -1,9 +1,10 @@
 
 const MovieDetails = (props) => {
+  console.log(props)
 
   return (
     <div className="MovieCardContent">
-      <div className="label"> { props.movie.imdbRating } </div>
+      <div className="label"> { props.movie.Title } </div>
       <div className="plot" style={{color: 'black', fontWeight: '500', fontSize: '27px'}}>
         <span>{ props.movie.Plot }</span>
       </div>

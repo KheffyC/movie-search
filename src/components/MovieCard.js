@@ -1,13 +1,15 @@
 import MovieDetails from "./MovieDetails"
+import MovieModal from "./MovieModal"
+import { useState } from "react"
 
 const MovieCard = (props) => {
-    console.log("my movie props are ", props)
-    
+    console.log("movieCard", props)    
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     
     <div className="Movie-Card-Container">
-        <div className="Movie-Card">
+        <div className="Movie-Card" onClick={() => setIsModalOpen(true)}>
             <div className="poster-image">
                 <img src={props.movieData.Poster} alt={props.movieData.Title}/>
             </div>
@@ -20,6 +22,11 @@ const MovieCard = (props) => {
                 NOW PLAYING
             </div>
         </div>
+        <MovieModal
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}  
+            movieData ={ props.movieData } 
+        />
     </div>
   )
 }
