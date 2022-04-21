@@ -16,6 +16,8 @@ body{
 }
 
 .Logo{
+    font-size: 20px;
+    font-weight: 450;
     color: #fff;
 }
 
@@ -28,6 +30,11 @@ body{
 }
 
 /* Search Container */
+.form-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .Home-Container{
     padding: 100px;
@@ -37,7 +44,7 @@ body{
 }
 
 .Home-Hero-Container{
-    font-size: 30px;
+    font-size: 25px;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -54,16 +61,24 @@ body{
     width: 365px;
     font-size:large;
 }
-.btn{
-    height: 30px;
-    width: 70px;
+.Button{
+    background-color: rgb(31, 31, 192);
+    color: white;
+    font-size: large;
+    height: 40px;
+    width: 100px;
+}
+
+.search-type{
+    font-size: large;
+    height: 40px;
+    width: 200px;
 }
 
 /* Movie List Display */
 
 .MovieListItem{
     display: flex; 
-    /* justify-content:flex-start; */
     flex-wrap: wrap;
     width: auto;
     border-style: groove;
@@ -79,13 +94,25 @@ body{
     font-size: 20px;
     font-family: block;
     border: solid #000 3px ;
+    transition: all .2s ease-in-out;
+}
+
+.Movie-Card-Container:hover{
+    transform: scale(1.02);
 }
 
 .Movie-Card{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid
+    border: solid;
+    transition: all .2s ease-in-out
+}
+
+.Movie-Card:hover{
+    transform: scale(1.02);
+    border: solid rgb(141, 39, 39);
+    border-width: medium;
 }
 
 .poster-image{
@@ -129,6 +156,27 @@ img{
 
 }
 
+/* Movie Modal */
+
+.Modal{
+    background-color: #3F51B5 ;
+    border-style: groove;
+    border: solid 1.5px;
+}
+
+.Modal-TitleBar{
+    padding: 16px;
+    border-bottom: 4px solid rgb(141, 39, 39);
+    display: flex;
+    justify-content: space-between;
+}
+
+.Modal-Title{
+    color: whitesmoke;
+    font-size: x-large;
+    font-weight: 400;
+}
+
 /*  Movie Details */
 
 .movieTags{
@@ -149,3 +197,16 @@ img{
     color: #000;
 }
 
+/* Pagination */
+
+.pagination{
+    color: white;
+}
+
+.page-item{
+    color: white;
+    
+}
+.page-link{
+    color: white;
+}
