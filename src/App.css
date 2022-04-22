@@ -81,7 +81,7 @@ body{
     display: flex; 
     flex-wrap: wrap;
     width: auto;
-    border-style: groove;
+    border: 2px groove black;
     background-color: #3F51B5 ;
     color: #fff;
 }
@@ -98,7 +98,8 @@ body{
 }
 
 .Movie-Card-Container:hover{
-    transform: scale(1.02);
+    transform: scale(1.009);
+    box-shadow: 3px 3px 3px #000;
 }
 
 .Movie-Card{
@@ -106,11 +107,11 @@ body{
     flex-direction: column;
     align-items: center;
     border: solid;
+    border-width: medium;
     transition: all .2s ease-in-out
 }
 
 .Movie-Card:hover{
-    transform: scale(1.02);
     border: solid rgb(141, 39, 39);
     border-width: medium;
 }
@@ -133,6 +134,14 @@ img{
     align-items: center;
     font-size: x-large;
     font-weight: 400;
+    color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.ModalPoster{
+    height: auto;
+    width: 350px;
+
 }
 
 .content{
@@ -159,7 +168,7 @@ img{
 /* Movie Modal */
 
 .Modal{
-    background-color: #3F51B5 ;
+    background-color: rgb(7, 9, 44) ;
     border-style: groove;
     border: solid 1.5px;
 }
@@ -172,16 +181,22 @@ img{
 }
 
 .Modal-Title{
-    color: whitesmoke;
-    font-size: x-large;
+    color: white;
+    font-size: 30px;
+    font-family: 'Typo Square Bold Demo';
     font-weight: 400;
 }
 
 /*  Movie Details */
 
+.plot{
+    text-align: center;
+    margin-bottom: 80px;
+}
+
 .movieTags{
     position: relative;
-	margin: 0 10px;
+	margin: 10px;
 	padding: 0;
 }
 
@@ -190,7 +205,7 @@ img{
 	list-style: none;
 	display: inline-block;
 	background-color: #ccc;
-	margin: 0;
+	margin: 15px 10px 5px 10px ;
 	padding: 3px 7px;
 	border-radius: 5px;
     box-shadow: 3px 5px 5px #000;
@@ -199,7 +214,7 @@ img{
 
 /* Pagination */
 
-.pagination{
+/* .pagination{
     color: white;
 }
 
@@ -209,4 +224,4 @@ img{
 }
 .page-link{
     color: white;
-}
+} */

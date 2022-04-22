@@ -1,9 +1,7 @@
-import MovieDetails from "./MovieDetails"
 import MovieModal from "./MovieModal"
 import { useState } from "react"
 
 const MovieCard = (props) => {
-    console.log("movieCard", props)    
     const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (

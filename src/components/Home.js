@@ -32,6 +32,8 @@ const Home = () => {
 
     }, [search])
 
+
+// Need to figure out how to pass payload to API when Submit button is clicked. Submit button currently dysfunctional 
   function handleSubmit(e) {
       e.preventDefault();
     const payload = {
@@ -48,28 +50,28 @@ const Home = () => {
             {/* Enter your Movie Name here! */}
             <form onSubmit={handleSubmit}>
                 <div className='form-box'>
-                <div className='input-field'>
-                    <label className='label' htmlFor='Search-Field'>
-                        Movie Search
-                    </label>
-                    <input 
-                        className="search-field" 
-                        name= 'Search Field'
-                        type='text' 
-                        value = {search}
-                        placeholder={'Movie Name, Keyword, Series ...'} 
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
-                </div>
-                <div className='dropdown-box'>
-                <label className='label' htmlFor='Type'>Type:</label>
-            <select  className='search-type' name='Type' onChange={(event) => setMovieType(event.target.value)}>
-                <option value='empty'></option>
-                <option value='Movie'> Movie</option>
-                <option value='Series'>Series</option>
-            </select>
-                </div>
-                <button type='submit' className='Button' onClick={() => handleSubmit()}>Submit</button>
+                    <div className='input-field'>
+                        <label className='label' htmlFor='Search-Field'>
+                            Movie Search
+                        </label>
+                        <input 
+                            className="search-field" 
+                            name= 'Search Field'
+                            type='text' 
+                            value = {search}
+                            placeholder={'Movie Name, Keyword, Series ...'} 
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </div>
+                    <div className='dropdown-box'>
+                        <label className='label' htmlFor='Type'>Type:</label>
+                        <select  className='search-type' name='Type' onChange={(event) => setMovieType(event.target.value)}>
+                            <option value='empty'></option>
+                            <option value='Movie'> Movie</option>
+                            <option value='Series'>Series</option>
+                        </select>
+                    </div>
+                    <button type='submit' className='Button' onClick={() => handleSubmit()}>Submit</button>
                 </div>
             </form>
         </div>
