@@ -25,7 +25,7 @@ const MovieModal = ({ isModalOpen, setIsModalOpen, movieData }) => {
 
   async function getMoviesById(id){
     const API_KEY = "af8f347a";
-    const url = `http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`;
+    const url = `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`;
         let res = await fetch(url)
         const data = await res.json();
         setModalMovie(data)
