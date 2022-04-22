@@ -1,20 +1,23 @@
 
 const MovieDetails = (props) => {
-  console.log(props)
+  console.log("This is my Movie Detail props", props)
 
   return (
     <div className="MovieCardContent">
-      <div className="label"> { props.movie.Title } </div>
-      <div className="plot" style={{color: 'black', fontWeight: '500', fontSize: '27px'}}>
-        <span>{ props.movie.Plot }</span>
+      <div>
+        <img className="ModalPoster" src={props.movieCard.Poster} alt='props.movieCard.Title' />
       </div>
-      <div className="label" style={{fontFamily: 'gotham Bold', color: 'black', fontSize: '32px', fontWeight: '400'}}>
-        { props.movie.Rated }
+      <div className="ModalDetails">
+        <div className="plot" style={{color:'gray', fontSize: '28px'}}>
+          <span>{ props.movie.Plot }</span>
+        </div>
+        <ul className="movieTags">
+          <li className="tagLabel">{ props.movie.Rated }</li>
+          <li className="tagLabel"> { props.movie.imdbRating } </li>
+          <li className="tagLabel">{ props.movie.Genre }</li>
+          <li className="tagLabel">{ props.movie.Runtime }</li>
+        </ul>
       </div>
-      <ul className="movieTags">
-        <li className="tagLabel">{ props.movie.Genre }</li>
-        <li className="tagLabel">{ props.movie.Runtime }</li>
-      </ul>
     </div>
   )
 }
