@@ -14,7 +14,7 @@ const Home = () => {
     
     const API_KEY = "af8f347a";
     async function movieData(search) {
-        const url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`;
+        const url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`;
         let res = await fetch(url)
         const data = await res.json();
         setMovies(data)
