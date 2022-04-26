@@ -71,7 +71,7 @@ const Home = () => {
                             <option value='Series'>Series</option>
                         </select>
                     </div>
-                    <button type='submit' className='Button' onClick={() => handleSubmit()}>Submit</button>
+                    <button className='Button' type='submit' onClick={() => handleSubmit()}>Submit</button>
                 </div>
             </form>
         </div>

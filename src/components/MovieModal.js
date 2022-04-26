@@ -38,6 +38,7 @@ const MovieModal = ({ isModalOpen, setIsModalOpen, movieData }) => {
     ReactModal.setAppElement("body");
 
     getMoviesById(movieData.imdbID);
+    
   },[isModalOpen])
 
   return (
