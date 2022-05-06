@@ -15,7 +15,7 @@ const modalStyles = {
     height: 650,
     inset: 0,
     padding: 0,
-  },
+  },    
 };
 
 const MovieModal = ({ isModalOpen, setIsModalOpen, movieData }) => {

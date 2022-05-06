@@ -5,7 +5,7 @@ const MovieDetails = (props) => {
   return (
     <div className="MovieCardContent">
       <div>
-        <img className="ModalPoster" src={props.movieCard.Poster} alt='props.movieCard.Title' />
+        <img className="ModalPoster" src={props.movieCard.Poster} alt={props.movieCard.Title} />
       </div>
       <div className="ModalDetails">
         <div className="plot" style={{color:'gray', fontSize: '28px'}}>
