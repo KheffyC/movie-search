@@ -63,15 +63,6 @@ const Home = () => {
                             onChange={(e) => setSearch(e.target.value)}
                         />
                     </div>
-                    <div className='dropdown-box'>
-                        <label className='label' htmlFor='Type'>Type:</label>
-                        <select  className='search-type' name='Type' onChange={(event) => setMovieType(event.target.value)}>
-                            <option value='empty'></option>
-                            <option value='Movie'> Movie</option>
-                            <option value='Series'>Series</option>
-                        </select>
-                    </div>
-                    <button type='submit' className='Button' onClick={() => handleSubmit()}>Submit</button>
                 </div>
             </form>
         </div>
